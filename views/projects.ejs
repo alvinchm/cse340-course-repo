@@ -1,4 +1,22 @@
 <%- include('partials/header') %>
-    <h1>Service Projects</h1>
-    <p>List of upcoming service projects will appear here.</p>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+
+        <p>Check out our upcoming service projects:</p>
+        <ul class="project-list">
+            <% projects.forEach(project=> { %>
+                <li>
+                    <strong>
+                        <%= new Date(project.project_date).toLocaleDateString('en-US') %>:
+                            <%= project.title %>
+                                (<%= project.organization_name %>)
+                    </strong>
+                    <br>
+                    <%= project.description %> - <em>Location: <%= project.location %></em>
+                </li>
+                <% }); %>
+        </ul>
+    </main>
     <%- include('partials/footer') %>
