@@ -1,5 +1,6 @@
 import express from 'express';
 import { getAllProjects } from './src/models/projects.js';
+import { getAllCategories } from './src/models/categories.js';
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 
@@ -24,8 +25,10 @@ app.get('/projects', async (req, res) => {
     const title = 'Service Projects';
     res.render('projects', { title, projects });
 });
-app.get('/categories', (req, res) => {
-    res.render('categories', { title: 'Categories' });
+app.get('/categories', async (req, res) => {
+    const categories = await getAllCategories();
+    const title = 'Categories';
+    res.render('categories', { title, categories });
 });
 
 app.listen(PORT, () => {

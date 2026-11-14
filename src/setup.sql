@@ -42,3 +42,26 @@ VALUES
 (3, 'Elderly Care Visit', 'Spending time with seniors at the home.', 'Sunny Days Care', '2026-12-03'),
 (3, 'Food Bank Sorting', 'Sorting donated food boxes.', 'Central Food Bank', '2026-12-09'),
 (3, 'Holiday Gift Wrapping', 'Wrapping gifts for underprivileged kids.', 'Town Square', '2026-12-18');
+
+CREATE TABLE category (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE project_category (
+    project_id INT NOT NULL,
+    category_id INT NOT NULL,
+    PRIMARY KEY (project_id, category_id),
+    CONSTRAINT fk_project FOREIGN KEY(project_id) REFERENCES project(project_id),
+    CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES category(category_id)
+);
+
+INSERT INTO category (name) VALUES
+('Environmental'),
+('Education'),
+('Community Support');
+
+INSERT INTO project_category (project_id, category_id) VALUES
+(1, 3), (2, 1), (3, 3), (4, 2), (5, 3),
+(6, 1), (7, 1), (8, 1), (9, 2), (10, 1),
+(11, 3), (12, 3), (13, 3), (14, 3), (15, 3);
