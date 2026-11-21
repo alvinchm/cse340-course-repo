@@ -1,3 +1,9 @@
+.main-logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+}
 
 :root {
     --primary-color: #0056b3;
@@ -91,6 +97,66 @@ footer {
     text-align: center;
     padding: 1.5rem;
     margin-top: auto;
+}
+
+.organization-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.organization-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.org-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.org-details p {
+    margin: 0.25rem 0;
+}
+
+.project-categories {
+    margin-top: 1.5rem;
+}
+
+.category-tags {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background-color: #0b4f8a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.category-tag:hover,
+.category-tag:focus {
+    background-color: #073763;
+    outline: 2px solid #073763;
+    outline-offset: 2px;
 }
 
 @media (max-width: 768px) {

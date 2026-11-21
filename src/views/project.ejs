@@ -18,5 +18,20 @@
                 <%= project.organization_name %>
             </a>
         </p>
+
+        <% if (categories && categories.length> 0) { %>
+            <div class="project-categories">
+                <strong>Categories:</strong>
+                <ul class="category-tags">
+                    <% categories.forEach(category=> { %>
+                        <li>
+                            <a class="category-tag" href="/category/<%= category.category_id %>">
+                                <%= category.name %>
+                            </a>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <% } %>
     </main>
     <%- include('partials/footer') %>
